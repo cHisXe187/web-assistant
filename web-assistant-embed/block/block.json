@@ -1,0 +1,18 @@
+{
+  "apiVersion": 2,
+  "name": "chisxe187/web-assistant",
+  "title": "Web Assistant",
+  "category": "widgets",
+  "icon": "format-chat",
+  "description": "Embed your multilingual Web Assistant chatbot via iframe.",
+  "supports": { "html": false },
+  "attributes": {
+    "width": { "type": "string", "default": "100%" },
+    "height": { "type": "string", "default": "600px" },
+    "theme": { "type": "string", "default": "light" },
+    "lang": { "type": "string", "default": "de" },
+    "welcome": { "type": "string", "default": "Wie kann ich helfen?" },
+    "session": { "type": "string", "default": "global" }
+  },
+  "editorScript": "file:./index.js"
+}
