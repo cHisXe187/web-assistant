@@ -3,10 +3,15 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Alle Pfade erlauben das Einbetten aus deiner WP-Domain
         source: '/(.*)',
         headers: [
-          // Erlaube Einbettung NUR von deiner WP-Domain (mit/ohne www + Subdomains)
-          { key: 'Content-Security-Policy', value: "frame-ancestors 'self' https://deine-domain.tld https://www.deine-domain.tld https://*.deine-domain.tld;" },
+          {
+            key: 'Content-Security-Policy',
+            value: "frame-ancestors 'self' https://onmotion.it https://www.onmotion.it https://*.onmotion.it;"
+          },
+          // 👇 hebt das DENY auf!
+          { key: 'X-Frame-Options', value: 'ALLOWALL' },
         ],
       },
     ];
