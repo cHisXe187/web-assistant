@@ -17,16 +17,15 @@ export default function Home() {
   }
 
   return (
-    <main style={{ maxWidth: 680, margin: "40px auto", fontFamily: "system-ui" }}>
+    <main style={{ maxWidth: 720, margin: "40px auto", fontFamily: "system-ui" }}>
       <h1>💬 Web Assistant</h1>
-      <p>Frag mich etwas – dein OpenAI-Agent antwortet.</p>
-      <textarea
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        rows={4}
-        style={{ width: "100%", padding: 8 }}
-        placeholder="Deine Frage…"
-      />
+      <p>
+        Checks:{" "}
+        <a href="/api/ping" target="_blank" rel="noreferrer">/api/ping</a>{" | "}
+        <a href="/api/health" target="_blank" rel="noreferrer">/api/health</a>{" | "}
+        <a href="/api/agent" target="_blank" rel="noreferrer">/api/agent</a>
+      </p>
+      <textarea value={input} onChange={(e)=>setInput(e.target.value)} rows={4} style={{width:"100%",padding:8}} placeholder="Deine Frage…" />
       <div style={{ marginTop: 8 }}>
         <button onClick={send} style={{ padding: "8px 14px" }}>Senden</button>
       </div>

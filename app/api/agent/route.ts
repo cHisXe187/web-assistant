@@ -28,6 +28,7 @@ export async function POST(req: Request) {
       });
     }
 
+    // erst "input", wenn 400 dann "inputs"
     let res = await run({ input: { message } });
     if (res.status === 400) res = await run({ inputs: { message } });
 
