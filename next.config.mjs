@@ -5,8 +5,11 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          { key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self' https://onmotion.it https://www.onmotion.it https://*.onmotion.it;" },
+          {
+            key: 'Content-Security-Policy',
+            value:
+              "frame-ancestors 'self' https://onmotion.it https://www.onmotion.it https://*.onmotion.it;"
+          }
         ],
       },
     ];
