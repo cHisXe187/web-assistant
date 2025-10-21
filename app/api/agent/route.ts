@@ -10,7 +10,6 @@ export async function POST(req: Request) {
     const WORKFLOW_ID = process.env.OPENAI_WORKFLOW_ID;
     const API_KEY = process.env.OPENAI_API_KEY;
 
-    // Fallback: Zeig sinnvolle Fehlermeldung statt leerer 500er
     if (!WORKFLOW_ID || !API_KEY) {
       return NextResponse.json(
         { error: "Missing OPENAI_WORKFLOW_ID or OPENAI_API_KEY env vars." },
@@ -18,8 +17,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Manche Workflows erwarten 'input', andere 'inputs' → beide probieren
-    async function run(body: any) {
+    async function run(body: unknown) {
       return fetch(`https://api.openai.com/v1/workflows/${WORKFLOW_ID}/runs`, {
         method: "POST",
         headers: {
